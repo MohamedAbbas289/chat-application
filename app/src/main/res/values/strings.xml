@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Chat Application</string>
+    <string name="create_account">Create Account</string>
+    <string name="chat_app">Chat App</string>
+</resources>
