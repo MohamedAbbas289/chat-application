@@ -2,4 +2,9 @@
     <string name="app_name">Chat Application</string>
     <string name="create_account">Create Account</string>
     <string name="chat_app">Chat App</string>
+    <array name="categories">
+        <item>Sports</item>
+        <item>Music</item>
+        <item>Movies</item>
+    </array>
 </resources>

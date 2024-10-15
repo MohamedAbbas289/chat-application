@@ -33,7 +33,7 @@
                     android:layout_gravity="center"
                     android:text="@string/create_account"
                     android:textColor="@color/white"
-                    android:textSize="21sp"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
