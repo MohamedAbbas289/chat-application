@@ -31,7 +31,7 @@
                     android:layout_gravity="center"
                     android:text="sign in"
                     android:textColor="@color/white"
-                    android:textSize="21sp" />
+                    android:textSize="30sp" />
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 

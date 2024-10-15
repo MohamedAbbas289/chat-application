@@ -1,6 +1,6 @@
 package com.example.chatapplication.firestore
 
-import com.example.chatapplication.firestore.model.User
+import com.example.chatapplication.model.User
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.CollectionReference
@@ -10,7 +10,7 @@ import com.google.firebase.firestore.firestore
 object UsersDao {
     private fun getUsersCollection(): CollectionReference {
         val database = Firebase.firestore
-        return database.collection("users")
+        return database.collection(User.COLLECTION_NAME)
     }
 
     fun createUser(user: User, onCompleteListener: OnCompleteListener<Void>) {

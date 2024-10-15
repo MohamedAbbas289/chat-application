@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.chatapplication.SessionProvider
 import com.example.chatapplication.common.SingleLiveEvent
 import com.example.chatapplication.firestore.UsersDao
-import com.example.chatapplication.firestore.model.User
+import com.example.chatapplication.model.User
 import com.example.chatapplication.ui.Message
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth

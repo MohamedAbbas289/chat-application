@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_add_room">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.example.chatapplication.ui.addRoom.AddRoomViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
+
+        android:elevation="4dp"
+        app:cardCornerRadius="5dp"
+        app:contentPadding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Create new room"
+                android:textColor="#383838"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/group_img" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/room_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="8dp"
+                app:error="@{vm.roomNameError}">
+
+                <EditText
+                    android:id="@+id/room_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="Enter room name"
+                    android:inputType="text"
+                    android:text="@={vm.roomName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/room_description_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
+                app:error="@{vm.roomDescriptionError}">
+
+                <EditText
+                    android:id="@+id/room_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="Enter room description"
+                    android:lines="5"
+
+                    android:text="@={vm.roomDescription}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/create_room_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:onClick="@{()->vm.createRoom()}"
+                android:text="Confirm"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                app:cornerRadius="18dp" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{vm.isLoading()?View.VISIBLE:View.GONE}" />
+
+    </androidx.cardview.widget.CardView>
+</layout>
