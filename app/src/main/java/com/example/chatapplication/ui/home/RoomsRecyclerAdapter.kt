@@ -32,10 +32,21 @@ class RoomsRecyclerAdapter(var rooms: List<Room>? = listOf()) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(rooms?.get(position))
+        onItemClickListener?.let {
+            holder.itemView.setOnClickListener {
+                onItemClickListener!!.onItemClick(position, rooms!![position])
+            }
+        }
     }
 
     fun changeData(rooms: List<Room>?) {
         this.rooms = rooms
         notifyDataSetChanged()
+    }
+
+    var onItemClickListener: OnItemClickListener? = null
+
+    fun interface OnItemClickListener {
+        fun onItemClick(position: Int, room: Room)
     }
 }
