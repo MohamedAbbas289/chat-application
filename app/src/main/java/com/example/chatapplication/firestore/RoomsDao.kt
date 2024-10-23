@@ -8,7 +8,7 @@ import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.firestore
 
 object RoomsDao {
-    private fun getRoomsCollection(): CollectionReference {
+    fun getRoomsCollection(): CollectionReference {
         val database = Firebase.firestore
         return database.collection(Room.COLLECTION_NAME)
     }

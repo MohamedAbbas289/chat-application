@@ -2,6 +2,8 @@
     <string name="app_name">Chat Application</string>
     <string name="create_account">Create Account</string>
     <string name="chat_app">Chat App</string>
+    <string name="type_your_message">Type your message...</string>
+    <string name="send">Send</string>
     <array name="categories">
         <item>Sports</item>
         <item>Music</item>
